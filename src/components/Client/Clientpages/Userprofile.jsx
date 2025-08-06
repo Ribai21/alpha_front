@@ -86,7 +86,7 @@ const Userprofile = () => {
   
     } catch (error) {
       toast.error(error.response?.data?.message || "Registration failed.");
-      console.error("Registration error:", error);
+      console.error("Registration API error:", error);
     }
   };
   
