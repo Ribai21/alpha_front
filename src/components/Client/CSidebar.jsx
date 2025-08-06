@@ -13,7 +13,7 @@ import { useState, useEffect } from "react";
 import Tooltip from "@mui/material/Tooltip";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { API_URL } from "../../Constant";
+import { API_URL } from "../../components/Constant";
 import Logo from "../../assets/ogbrand.png";
 import Log_img from "../../assets/avatar.jpg"; // Default avatar
 

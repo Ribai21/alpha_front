@@ -85,7 +85,7 @@ import { GiMuscleUp } from "react-icons/gi";
 import { LuBike } from "react-icons/lu";
 import { BsPersonArmsUp } from "react-icons/bs";
 import { IoFitnessSharp } from "react-icons/io5";
-import { API_URL } from "../../Constant";
+import { API_URL } from ".././Constant";
 
 
 const Programs = () => {

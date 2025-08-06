@@ -11,7 +11,7 @@ import { FaInstagram, FaWhatsapp, FaFacebookF } from "react-icons/fa";
 import Footer from "../footer/Footer";
 import TiltedCard from "../Text/Card";
 import sample from "../../assets/ogbrand.png";
-import { API_URL } from "../../Constant";
+import { API_URL } from "../Constant";
 const About = () => {
   const [trainer, setTrainer] = useState([]);
 
