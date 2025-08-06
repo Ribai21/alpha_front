@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import {toast} from "react-toastify";
-import { API_URL } from "../../config";
+import { API_URL } from "../../Constant";
 const AProgram = () => {
     const [programs, setPrograms] = useState([]);
     const [newProgram, setNewProgram] = useState({ heading: "", details: "" });

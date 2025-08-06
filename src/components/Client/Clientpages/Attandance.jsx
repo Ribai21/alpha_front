@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { API_URL } from "../../config";
+import { API_URL } from "../../Constant";
 const Attendance = () => {
   const [user, setUser] = useState(null);
   const [attendance, setAttendance] = useState([]);

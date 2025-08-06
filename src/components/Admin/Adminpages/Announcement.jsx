@@ -4,7 +4,7 @@ import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { motion } from "framer-motion";
-import { API_URL } from "../../config";
+import { API_URL } from "../../Constant";
 const Announcement = () => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");

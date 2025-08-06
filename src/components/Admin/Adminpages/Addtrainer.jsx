@@ -7,7 +7,7 @@ import Modellay from "../../Model/Modellay";
 import Trainerdata from "../Adminpages/Memberdata/Trainerdata";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
-import { API_URL } from "../../config";
+import { API_URL } from "../../Constant";
 const Addtrainer = () => {
   const [user, setUser] = useState([]); 
   const [filteruser, setFilterUser] = useState([]); 

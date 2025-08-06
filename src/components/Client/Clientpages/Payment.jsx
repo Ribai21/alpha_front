@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { API_URL } from "../../config";
+import { API_URL } from "../../Constant";
 const Payment = () => {
   const [data, setData] = useState({
     email: "",

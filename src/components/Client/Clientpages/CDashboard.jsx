@@ -4,7 +4,7 @@ import { BsMegaphoneFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Badge from "@mui/material/Badge";
 import axios from "axios";
-import { API_URL } from "../../config";
+import { API_URL } from "../../Constant";
 const CDashboard = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");

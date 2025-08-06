@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { API_URL } from "../../config";
+import { API_URL } from "../../Constant";
 const Trainerdata = ({ handleclose, existingData, isEdit }) => {
   const [userData, setUserData] = useState({
     name: "",

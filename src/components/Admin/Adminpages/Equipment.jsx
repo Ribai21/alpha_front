@@ -7,7 +7,7 @@ import Modellay from "../../Model/Modellay";
 import Equipmentdata from "../Adminpages/Equipmentdata";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
-import { API_URL } from "../../config";
+import { API_URL } from "../../Constant";
 const Equipment = () => {
   const [user, setUser] = useState([]); 
   const [filteruser, setFilterUser] = useState([]); 

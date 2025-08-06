@@ -6,7 +6,7 @@ import Modellay from "../../Model/Modellay";
 import Memberdata from "../Adminpages/Memberdata/Clientdata";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion"; // Import Framer Motion
-import { API_URL } from "../../config";
+import { API_URL } from "../../Constant";
 
 const Addmember = () => {
   const [user, setUser] = useState([]); 

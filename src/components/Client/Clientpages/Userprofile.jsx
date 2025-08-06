@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Stepper, { Step } from "../../Text/Stepper"; // Custom Stepper component
 import axios from "axios";
 import { toast } from "react-toastify";
-import { API_URL } from "../../config";
+import { API_URL } from "../../Constant";
 const Userprofile = () => {
   const [formData, setFormData] = useState({
     name: "",

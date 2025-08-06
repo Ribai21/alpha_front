@@ -17,7 +17,7 @@ import {
 import { FaUsers, FaUserCheck, FaDollarSign } from "react-icons/fa";
 import { GiTakeMyMoney } from "react-icons/gi";
 import axios from "axios";
-import { API_URL } from "../../config";
+import { API_URL } from "../../Constant";
 const Dashboard = () => {
   const [selectedGraph, setSelectedGraph] = useState("revenue");
   const [revenueFilter, setRevenueFilter] = useState("monthly");
