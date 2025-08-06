@@ -85,7 +85,7 @@ import { GiMuscleUp } from "react-icons/gi";
 import { LuBike } from "react-icons/lu";
 import { BsPersonArmsUp } from "react-icons/bs";
 import { IoFitnessSharp } from "react-icons/io5";
-
+import { API_URL } from "../../config";
 
 
 const Programs = () => {
@@ -97,7 +97,7 @@ const Programs = () => {
   const isLoggedIn = !!localStorage.getItem("token");
   useEffect(() => {
     axios
-      .get("http://localhost:5000/programs")
+      .get(`${API_URL}/programs`)
       .then((res) => setPrograms(res.data))
       .catch((err) => console.error("Error fetching programs:", err));
   }, []);

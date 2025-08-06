@@ -31,14 +31,14 @@ const Equipmentdata = ({ handleclose, existingData, isEdit }) => {
     try {
       if (isEdit) {
         await axios.patch(
-          `http://localhost:5000/equip/${existingData.id}`,
+          `${API_URL}/equip/${existingData.id}`,
           userData
         );
         toast.success("Equipment updated successfully!");
       } else {
         // console.log("Sending User Data:", userData); // Debugging
         const response = await axios.post(
-          "http://localhost:5000/equip",
+          `${API_URL}/equip`,
           userData
         );
         toast.success("Equipment added successfully!");

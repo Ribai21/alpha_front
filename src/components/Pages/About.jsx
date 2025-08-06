@@ -11,7 +11,7 @@ import { FaInstagram, FaWhatsapp, FaFacebookF } from "react-icons/fa";
 import Footer from "../footer/Footer";
 import TiltedCard from "../Text/Card";
 import sample from "../../assets/ogbrand.png";
-
+import { API_URL } from "../../config";
 const About = () => {
   const [trainer, setTrainer] = useState([]);
 
@@ -21,7 +21,7 @@ const About = () => {
 
   const fetchdetails = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/tusers");
+      const { data } = await axios.get(`${API_URL}/tusers`);
       setTrainer(data);
     } catch (err) {
       console.error("Error fetching trainer data:", err);

@@ -1,19 +1,20 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
+import { API_URL } from "../../config";
 const TrainerAtt = () => {
   const [trainers, setTrainers] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/trainers")
+      .get(`${API_URL}/trainers`)
       .then((res) => setTrainers(res.data))
       .catch((err) => console.error(err));
   }, []);
 
   const handleCheckInOut = async (trainerId, index) => {
     try {
-      const res = await axios.post("http://localhost:5000/check-in-out", {
+      const res = await axios.post(`${API_URL}/check-in-out`, {
         trainer_id: trainerId,
       });
 

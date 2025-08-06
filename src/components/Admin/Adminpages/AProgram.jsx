@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import {toast} from "react-toastify";
-
+import { API_URL } from "../../config";
 const AProgram = () => {
     const [programs, setPrograms] = useState([]);
     const [newProgram, setNewProgram] = useState({ heading: "", details: "" });
@@ -14,7 +14,7 @@ const AProgram = () => {
 
     const fetchPrograms = async () => {
         try {
-            const res = await axios.get("http://localhost:5000/programs");
+            const res = await axios.get(`${API_URL}/programs`);
             setPrograms(res.data);
         } catch (error) {
             console.error("Error fetching programs", error);
@@ -28,7 +28,7 @@ const AProgram = () => {
         return;
       }
       try {
-        const res = await axios.post("http://localhost:5000/programs", newProgram);
+        const res = await axios.post(`${API_URL}/programs`, newProgram);
         setPrograms([...programs, res.data]);
         setNewProgram({ heading: "", details: "" });
       } catch (error) {
@@ -43,7 +43,7 @@ const AProgram = () => {
 
     const handleUpdateProgram = async (id) => {
         try {
-            await axios.patch(`http://localhost:5000/programs/${id}`, updatedProgram);
+            await axios.patch(`${API_URL}/programs/${id}`, updatedProgram);
             setPrograms(programs.map(p => (p.id === id ? { ...p, ...updatedProgram } : p)));
             setEditingProgram(null);
         } catch (error) {
@@ -55,7 +55,7 @@ const AProgram = () => {
         const isConfirm = window.confirm("Are you sure?");
         if (isConfirm) {
             try {
-                await axios.delete(`http://localhost:5000/programs/${id}`);
+                await axios.delete(`${API_URL}/programs/${id}`);
                 setPrograms(programs.filter(p => p.id !== id));
             } catch (error) {
                 console.error("Error deleting program", error);

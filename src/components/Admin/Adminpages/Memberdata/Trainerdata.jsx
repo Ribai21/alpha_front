@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-
+import { API_URL } from "../../config";
 const Trainerdata = ({ handleclose, existingData, isEdit }) => {
   const [userData, setUserData] = useState({
     name: "",
@@ -31,14 +31,14 @@ const Trainerdata = ({ handleclose, existingData, isEdit }) => {
     try {
       if (isEdit) {
         await axios.patch(
-          `http://localhost:5000/tusers/${existingData.id}`,
+          `${API_URL}/tusers/${existingData.id}`,
           userData
         );
         toast.success("User updated successfully!");
       } else {
         console.log("Sending User Data:", userData); // Debugging
         const response = await axios.post(
-          "http://localhost:5000/tusers",
+          `${API_URL}/tusers`,
           userData
         );
         toast.success("User added successfully!");

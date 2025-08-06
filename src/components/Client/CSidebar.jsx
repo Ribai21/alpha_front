@@ -13,7 +13,7 @@ import { useState, useEffect } from "react";
 import Tooltip from "@mui/material/Tooltip";
 import { toast } from "react-toastify";
 import axios from "axios";
-
+import { API_URL } from "../../config";
 import Logo from "../../assets/ogbrand.png";
 import Log_img from "../../assets/avatar.jpg"; // Default avatar
 
@@ -34,7 +34,7 @@ const CSidebar = () => {
   const fetchUserDetails = async (mobileNumber) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/user/${mobileNumber}`
+        `${API_URL}/user/${mobileNumber}`
       );
       setUser(response.data);
     } catch (error) {
@@ -71,7 +71,7 @@ const CSidebar = () => {
           <Link to="editprofile">
           {isOpen && <div className="flex items-center space-x-3">
               <img
-                src={user?.image ? `http://localhost:5000/${user.image}` : Log_img}
+                src={user?.image ? `${API_URL}/${user.image}` : Log_img}
                 alt="User"
                 className="w-16 h-16 rounded-full  "
               />

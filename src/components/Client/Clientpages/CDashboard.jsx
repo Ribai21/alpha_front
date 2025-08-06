@@ -4,7 +4,7 @@ import { BsMegaphoneFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Badge from "@mui/material/Badge";
 import axios from "axios";
-
+import { API_URL } from "../../config";
 const CDashboard = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
@@ -26,7 +26,7 @@ const CDashboard = () => {
   useEffect(() => {
     const fetchAnnouncementCount = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/announcements/count");
+        const response = await axios.get(`${API_URL}/api/announcements/count`);
         setAnnouncementCount(response.data.count);
       } catch (error) {
         console.error("Error fetching announcement count:", error);

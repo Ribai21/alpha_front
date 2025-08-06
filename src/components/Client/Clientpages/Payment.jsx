@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
-
+import { API_URL } from "../../config";
 const Payment = () => {
   const [data, setData] = useState({
     email: "",
@@ -18,7 +18,7 @@ const Payment = () => {
   useEffect(() => {
     if (storedMobile) {
       axios
-        .get(`http://localhost:5000/api/getUserByMobile/${storedMobile}`)
+        .get(`${API_URL}/api/getUserByMobile/${storedMobile}`)
         .then((res) => {
           if (res.data.user) {
             setUserId(res.data.user.id); // ✅ This is the correct user ID
@@ -102,7 +102,7 @@ const Payment = () => {
       },
       handler: async function (response) {
         try {
-          await axios.post("http://localhost:5000/api/payment", {
+          await axios.post(`${API_URL}/api/payment`, {
             user_id: userId,
             amount,
             transaction_id: response.razorpay_payment_id,

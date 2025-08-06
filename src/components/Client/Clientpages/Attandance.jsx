@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import { API_URL } from "../../config";
 const Attendance = () => {
   const [user, setUser] = useState(null);
   const [attendance, setAttendance] = useState([]);
@@ -13,7 +13,7 @@ const Attendance = () => {
     const fetchUserDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/user/details/mobile/${mobile}`
+          `${API_URL}/user/details/mobile/${mobile}`
         );
         setUser(response.data);
       } catch (error) {
@@ -25,7 +25,7 @@ const Attendance = () => {
     const fetchAttendance = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/attendance/mobile/${mobile}`
+          `${API_URL}/attendance/mobile/${mobile}`
         );
         setAttendance(response.data);
       } catch (error) {

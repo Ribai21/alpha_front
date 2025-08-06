@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Stepper, { Step } from "../../Text/Stepper"; // Custom Stepper component
 import axios from "axios";
 import { toast } from "react-toastify";
-
+import { API_URL } from "../../config";
 const Userprofile = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -74,7 +74,7 @@ const Userprofile = () => {
     formDataToSend.append("image", formData.image); // Append file
   
     try {
-      const response = await axios.post("http://localhost:5000/register", formDataToSend, {
+      const response = await axios.post(`${API_URL}/register`, formDataToSend, {
         headers: { "Content-Type": "multipart/form-data" }, // Important for file upload
       });
 

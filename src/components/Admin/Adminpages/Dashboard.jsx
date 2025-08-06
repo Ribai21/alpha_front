@@ -17,7 +17,7 @@ import {
 import { FaUsers, FaUserCheck, FaDollarSign } from "react-icons/fa";
 import { GiTakeMyMoney } from "react-icons/gi";
 import axios from "axios";
-
+import { API_URL } from "../../config";
 const Dashboard = () => {
   const [selectedGraph, setSelectedGraph] = useState("revenue");
   const [revenueFilter, setRevenueFilter] = useState("monthly");
@@ -27,7 +27,7 @@ const Dashboard = () => {
     const fetchPaymentStatus = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/transaction"
+          `${API_URL}/transaction`
         );
         setUsers(response.data);
       } catch (error) {

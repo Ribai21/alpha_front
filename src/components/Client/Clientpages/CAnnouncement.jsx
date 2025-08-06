@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import { API_URL } from "../../config";
 const CAnnouncement = () => {
   const [messages, setMessages] = useState([]);
 
@@ -10,7 +10,7 @@ const CAnnouncement = () => {
 
   const fetchMessages = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/messages");
+      const { data } = await axios.get(`${API_URL}/messages`);
       setMessages(data);
     } catch (err) {
       console.error("Error fetching messages:", err);

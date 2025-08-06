@@ -6,6 +6,7 @@ import { MdPerson } from "react-icons/md";
 import { GiMuscleUp } from "react-icons/gi";
 import { RiVipCrownFill } from "react-icons/ri"; // VIP Crown - Premium Membership Icon
 import SplitText from "../../Text/Split";
+import { API_URL } from "../../Constant";
 
 const Userdetails = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +24,7 @@ const Userdetails = () => {
   const fetchUserDetails = async (mobileNumber) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/user/${mobileNumber}`
+        `${API_URL}/user/${mobileNumber}`
       );
       setUser(response.data);
     } catch (error) {
@@ -55,7 +56,7 @@ const Userdetails = () => {
             <img
               src={
                 user.image
-                  ? `http://localhost:5000/${user.image}`
+                  ? `${API_URL}/${user.image}`
                   : "https://via.placeholder.com/100"
               }
               alt="Profile"

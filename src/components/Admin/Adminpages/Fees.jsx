@@ -10,7 +10,7 @@ const Fees = () => {
     const fetchPaymentStatus = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/payment-status"
+          `${API_URL}/api/payment-status`
         );
         setUsers(response.data);
       } catch (error) {
@@ -25,7 +25,7 @@ const Fees = () => {
     setLoading((prev) => ({ ...prev, [userId]: true })); // Set loading state
 
     try {
-      await axios.post("http://localhost:5000/api/send-payment-reminder", {
+      await axios.post(`${API_URL}/api/send-payment-reminder`, {
         email,
         name,
       });

@@ -7,7 +7,7 @@ import Modellay from "../../Model/Modellay";
 import Equipmentdata from "../Adminpages/Equipmentdata";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
-
+import { API_URL } from "../../config";
 const Equipment = () => {
   const [user, setUser] = useState([]); 
   const [filteruser, setFilterUser] = useState([]); 
@@ -17,7 +17,7 @@ const Equipment = () => {
   // Fetch all users
   const getAllusers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/equip");
+      const res = await axios.get(`${API_URL}/equip`);
       if (Array.isArray(res.data)) {
         setFilterUser(res.data);
         setUser(res.data);
@@ -52,7 +52,7 @@ const Equipment = () => {
     const isConfirm = window.confirm("Are You Sure!!");
     if (isConfirm) {
       try {
-        const res = await axios.delete(`http://localhost:5000/equip/${id}`);
+        const res = await axios.delete(`${API_URL}/equip/${id}`);
         if (res.status === 200) {
           const updatedUsers = user.filter((user) => user.id !== id);
           setUser(updatedUsers);

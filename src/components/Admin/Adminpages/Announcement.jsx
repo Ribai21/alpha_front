@@ -4,6 +4,7 @@ import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { motion } from "framer-motion";
+import { API_URL } from "../../config";
 const Announcement = () => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
@@ -16,7 +17,7 @@ const Announcement = () => {
 
   const fetchMessages = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/messages");
+      const { data } = await axios.get(`${API_URL}/messages`);
       setMessages(data);
     } catch (err) {
       console.error("Error fetching messages:", err);
@@ -26,7 +27,7 @@ const Announcement = () => {
   const addMessage = async () => {
     if (!newMessage.trim()) return;
     try {
-      const { data } = await axios.post("http://localhost:5000/messages", {
+      const { data } = await axios.post(`${API_URL}/messages`, {
         message: newMessage,
       });
       setMessages([data, ...messages]);
@@ -38,7 +39,7 @@ const Announcement = () => {
   const updateMessage = async (id) => {
     if (!updatedMessage.trim()) return;
     try {
-      await axios.patch(`http://localhost:5000/messages/${id}`, {
+      await axios.patch(`${API_URL}/messages/${id}`, {
         message: updatedMessage,
       });
       setMessages(
@@ -54,7 +55,7 @@ const Announcement = () => {
 
   const deleteMessage = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/messages/${id}`);
+      await axios.delete(`${API_URL}/messages/${id}`);
       setMessages(messages.filter((msg) => msg.id !== id));
     } catch (err) {
       console.error("Error deleting message:", err);

@@ -1,19 +1,20 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
+import { API_URL } from "../../config";
 const ClientAtt = () => {
   const [clients, setClients] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/clients")
+      .get(`${API_URL}/clients`)
       .then((res) => setClients(res.data))
       .catch((err) => console.error(err));
   }, []);
 
   const markPresent = async (clientId) => {
     try {
-      await axios.post("http://localhost:5000/mark-present", {
+      await axios.post(`${API_URL}/mark-present`, {
         client_id: clientId,
       });
       setClients((prevClients) =>
