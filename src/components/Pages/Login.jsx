@@ -9,6 +9,7 @@ import { FaRegEyeSlash, FaRegEye } from "react-icons/fa6";
 import { ImSpinner9 } from "react-icons/im";
 import Forgetpass from "./Forgetpass";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../Constant.js";
 
 const Login = () => {
   const [selectedImage, setSelectedImage] = useState(Log_img);
@@ -82,7 +83,7 @@ const Login = () => {
   
     setLoading(true);
   
-    const url = action === "Login" ? "http://localhost:5000/login" : "http://localhost:5000/signup";
+    const url = action === "Login" ? `${API_URL}/login` : `${API_URL}/signup`;
   
     try {
       const response = await fetch(url, {

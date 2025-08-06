@@ -3,6 +3,7 @@ import axios from "axios";
 import "../Pages/Forget.css";
 import CloseIcon from "@mui/icons-material/Close";
 import { motion } from "framer-motion";
+import { API_URL } from "../Constant.js";
 
 const Forgetpass = ({ isOpen, onClose }) => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -36,14 +37,14 @@ const Forgetpass = ({ isOpen, onClose }) => {
     try {
       if (currentStep === 0) {
         // Send OTP to email
-        const response = await axios.post("http://localhost:5000/api/auth/send-otp", {
+        const response = await axios.post(`${API_URL}/api/auth/send-otp`, {
           email: formData.email,
         });
         alert(response.data.message);
         setCurrentStep(1);
       } else if (currentStep === 1) {
         // Verify OTP
-        const response = await axios.post("http://localhost:5000/api/auth/verify-otp", {
+        const response = await axios.post(`${API_URL}/api/auth/verify-otp`, {
           email: formData.email,
           otp: formData.otp,
         });
@@ -51,7 +52,7 @@ const Forgetpass = ({ isOpen, onClose }) => {
         setCurrentStep(2);
       } else if (currentStep === 2) {
         // Reset password
-        const response = await axios.post("http://localhost:5000/api/auth/reset-password", {
+        const response = await axios.post(`${API_URL}/api/auth/reset-password`, {
           email: formData.email,
           newPassword: formData.newPassword,
         });
