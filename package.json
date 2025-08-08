@@ -28,6 +28,7 @@
     "react-scroll": "^1.8.7",
     "react-toastify": "^11.0.3",
     "recharts": "^2.15.1",
+    "sitemap": "^8.0.0",
     "styled-components": "^6.1.15",
     "swiper": "^11.2.6",
     "web-vitals": "^2.1.4"
