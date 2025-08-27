@@ -31,9 +31,20 @@
 
     <!-- Robots -->
     <meta name="robots" content="index, follow" />
+    
+    <!-- Google Search Console Verification (Replace with your actual verification code) -->
+   <meta name="google-site-verification" content="googleceedeff93466296a.html" />
 
     <!-- Author -->
     <meta name="author" content="Alpha Arena Team" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta name="geo.region" content="IN" />
+    <meta name="geo.placename" content="India" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -53,7 +64,7 @@
       property="twitter:description"
       content="Achieve your fitness goals with Alpha Arena. Expert coaching, modern equipment, and a motivating environment."
     />
-    <meta property="twitter:image" content="https://alphaarena.netlify.app/preview-image.png" />
+    <meta property="twitter:image" content="https://alphaarena.netlify.app/gym-arena.avif" />
 
     <!-- Fonts -->
     <link rel="apple-touch-icon" href="/gym-arena.avif" />
@@ -74,6 +85,40 @@
 
     <!-- Razorpay -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Gym",
+      "name": "Alpha Arena",
+      "description": "Your Ultimate Fitness Destination - Premium gym facilities, experienced trainers, and flexible memberships.",
+      "url": "https://alphaarena.netlify.app",
+      "logo": "https://alphaarena.netlify.app/gym-arena.avif",
+      "image": "https://alphaarena.netlify.app/gym-arena.avif",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://alphaarena.netlify.app"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Gym Memberships",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Gym Membership"
+            }
+          }
+        ]
+      }
+    }
+    </script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3BQH3EJWJ"></script>
